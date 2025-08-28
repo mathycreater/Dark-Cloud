@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Webcomic Viewer — 800×12800</title>
+  <meta name="description" content="Página simples e responsiva para ler uma webcomic com imagem alta (ex.: 800×12800)." />
+  <meta name="color-scheme" content="light dark">
+  <style>
+    :root {
+      --bg: #0b0b0c;
+      --fg: #e7e7ea;
+      --muted: #9aa0a6;
+      --panel: #141417;
+      --accent: #7aa2ff;
+      --img-max-width: min(100vw, 800px);
+      --scale: 1;
+      --reader-padding: clamp(12px, 3vw, 28px);
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+    .reader { display: grid; place-items: center; padding: var(--reader-padding); }
+    .page {
+      max-width: var(--img-max-width);
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px color-mix(in oklab, black 60%, transparent);
+    }
+  </style>
+</head>
+<body>
+  <main class="reader" role="main">
+    <div class="page-wrap" id="wrap">
+      <!-- A imagem será carregada automaticamente da pasta local -->
+      <img id="page" class="page" src="comic.PNG" alt="Página de webcomic" decoding="async" />
+    </div>
+  </main>
+</body>
+</html>
